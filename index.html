@@ -154,7 +154,7 @@
 
   /* BODY TEXT */
   .body {
-    font-size: 13.5px;
+    font-size: 16px;
     line-height: 1.6;
     color: var(--ink-2);
     max-width: 720px;
@@ -450,8 +450,8 @@
   </div>
   <div>
     <div class="deck-title">A digital photo journal · Three AI systems · One square mile of Wembley</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,241,234,0.6);margin-top:10px;">Resident, Wembley &middot; daily commuter.</div>
   </div>
-  <div class="slide-footer"><span>410483</span><span>UNIVERSITY OF LAW · MOORGATE</span></div>
 </section>
 
 <!-- SLIDE 2: FRAMEWORK -->
@@ -476,6 +476,7 @@
         <div class="layer-label">TEST</div>
         <div class="layer-title">Floridi&rsquo;s five principles</div>
         <div class="layer-desc">what we owe each other when AI is in the loop</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.08em;color:#B0301C;margin-top:6px;">Beneficence &middot; Non-maleficence &middot; Autonomy &middot; Justice &middot; Explicability</div>
       </div>
       <div class="layer-arrow">▲</div>
       <div class="layer">
@@ -486,7 +487,7 @@
       <div class="uk-note">UK position: keeps the test, skips the rules (DSIT, 2023)</div>
     </div>
   </div>
-  <div class="slide-footer"><span>BS620 PART 1 · 410483</span><span>02 / 08</span></div>
+
 </section>
 
 <!-- SLIDE 3: TFL -->
@@ -501,11 +502,11 @@
     </div>
     <div class="text-col body">
       <p>I tap in three to five times a day on a contactless card. That action sits inside roughly 1.6 billion contactless journeys on TfL&rsquo;s network in 2024 <span class="cite">(Copic, 2025)</span>, or about 130 million a month. The AI is not in the gateline. It is in the analytics that pull from the tap and from the depersonalised Wi-Fi signal across 260 stations <span class="cite">(TfL, 2019)</span>, and the open data feeds that power more than 600 apps and contribute up to £130m a year to London&rsquo;s economy <span class="cite">(Deloitte, 2017)</span>.</p>
-      <p>What this case keeps coming back to is consent. Boiten (as cited in Fearn, 2019) made the point that telling people to turn off their Wi-Fi is not a real opt-out when the alternative is not using the Tube. The 2024 cyberattack made it harder to argue otherwise. Around 5,000 customers&rsquo; bank details and home addresses were accessed in that breach <span class="cite">(Scroxton, 2024)</span>, and TfL had no way to give them the choice to never have shared that data in the first place.</p>
-      <p><strong>The EU AI Act might call this high risk. The UK does not.</strong></p>
+      <p>What this case keeps coming back to is consent. The principle that fails is Autonomy: the only opt-out — leaving the network entirely — is unavailable to anyone who depends on the Tube to live, which means meaningful autonomous choice over data exposure does not exist. Boiten (as cited in Fearn, 2019) made the point that telling people to turn off their Wi-Fi is not a real opt-out when the alternative is not using the Tube. The 2024 cyberattack made it harder to argue otherwise. Around 5,000 customers&rsquo; bank details and home addresses were accessed in that breach <span class="cite">(Scroxton, 2024)</span>, and TfL had no way to give them the choice to never have shared that data in the first place.</p>
+      <p><strong>The analytics layer most likely falls under limited risk with transparency obligations under the EU AI Act, while the linked law-enforcement data feeds raise the higher-tier classification question separately. The UK has no equivalent statutory test for either tier — the classification question simply does not arise.</strong></p>
     </div>
   </div>
-  <div class="slide-footer"><span>BS620 PART 1 · 410483</span><span>03 / 08</span></div>
+
 </section>
 
 <!-- SLIDE 4: SMART PARKING -->
@@ -520,11 +521,11 @@
     </div>
     <div class="text-col body">
       <p>I walked past an ANPR enforcement camera at the Empire Way Public Car Park, a private commercial site two minutes from Wembley Stadium. It is mounted on a pole, no taller than a streetlight, and tens of thousands of drivers pass under one daily without noticing.</p>
-      <p>The camera&rsquo;s actual customer? The reading goes to two different places. For policing, the read goes into the National ANPR Service, where around 11,000 cameras submit roughly 50 million records every day <span class="cite">(NPCC, 2020)</span>. For private parking, the same read becomes a Parking Charge Notice. In 2024–25, private operators issued 14.4 million of those, each a £100 contractual claim against a driver who never knowingly signed a contract <span class="cite">(RAC, 2025)</span>. At Empire Way, the same ANPR runs a £35 event-day surge over the £10 ordinary rate.</p>
+      <p>The camera&rsquo;s actual customer? The reading goes to two different places. For policing, the read goes into the National ANPR Service, where around 11,000 cameras submit roughly 50 million records every day <span class="cite">(NPCC, 2020)</span>. For private parking, the same read becomes a Parking Charge Notice. In 2024–25, private operators issued 14.4 million of those, each a £100 contractual claim against a driver who never knowingly signed a contract <span class="cite">(RAC, 2025)</span>. At Empire Way, the same ANPR runs a £35 event-day surge over the £10 ordinary rate. Justice fails because the £100 PCN and the £35 surge run through a private operator&rsquo;s internal review process, not statutory appeal — so the driver&rsquo;s challenge route is procedurally weaker than the operator&rsquo;s enforcement route.</p>
       <p>The plate counts as personal data under UK GDPR <span class="cite">(ICO, 2024)</span>. <strong>The algorithmic decision sitting on top of it does not fall under any UK AI law, and the EU AI Act would not catch it either.</strong></p>
     </div>
   </div>
-  <div class="slide-footer"><span>BS620 PART 1 · 410483</span><span>04 / 08</span></div>
+
 </section>
 
 <!-- SLIDE 5: WEMBLEY -->
@@ -540,11 +541,11 @@
     <div class="text-col body">
       <p>I stood under a Brent Council CCTV mast on Olympic Way looking up at the stadium arch. The cameras above me exist because of a specific failure. On 11 July 2021 around 6,000 ticketless fans stormed the Euro 2020 Final, and Baroness Casey later called the day a near miss with real risk of fatalities <span class="cite">(Casey, 2021)</span>.</p>
       <p>Brent Council, the FA, the Met Police, and the stadium operator built the post-Casey response together: a Zone Ex coordination centre, expanded CCTV across Wembley Park and Wembley Central, and integrated event-day monitoring <span class="cite">(Brent Council, 2026)</span>.</p>
-      <p>Beneficence here has a documented case behind it. The justice question is harder to answer. The same cameras watch event-day crowds of 90,000 and the residents walking past on a Tuesday morning, and the operational rationale does not distinguish between them. Brent is one of London&rsquo;s most diverse boroughs, and its residents now carry the surveillance cost of visitor disorder they did not cause.</p>
-      <p>The cameras currently run crowd analytics rather than biometric identification. <strong>The moment facial recognition is added, Article 5 of the EU AI Act would prohibit the deployment outright.</strong></p>
+      <p>Beneficence here has a documented case behind it. The justice question is harder to answer. The residents bearing the daily surveillance burden are not the visitors whose disorder generated the rationale. The same cameras watch event-day crowds of 90,000 and the residents walking past on a Tuesday morning, and the operational rationale does not distinguish between them. Brent is one of London&rsquo;s most diverse boroughs, and its residents now carry the surveillance cost of visitor disorder they did not cause.</p>
+      <p>The cameras currently run crowd analytics rather than biometric identification. <strong>Article 5 of the EU AI Act prohibits real-time remote biometric identification in publicly accessible spaces by law enforcement, with narrow exceptions covering imminent threat, missing persons, and suspects in defined serious crime categories. None of those exceptions fit general borough CCTV, which is why adding facial recognition here would trigger the prohibition rather than fall within it.</strong></p>
     </div>
   </div>
-  <div class="slide-footer"><span>BS620 PART 1 · 410483</span><span>05 / 08</span></div>
+
 </section>
 
 <!-- SLIDE 6: COMPARISON -->
@@ -595,7 +596,7 @@
   <div class="slide-6-conclusion">
     What changes across these three cases is not the camera. <span class="key">It is which rulebook applies.</span> Three cases, the same underlying technology, one square mile — three EU AI Act categories, three different Floridi failures, three different UK regulators (and one gap where no regulator applies), pulling SDG 9, 11, and 16 in different directions.
   </div>
-  <div class="slide-footer"><span>BS620 PART 1 · 410483</span><span>06 / 08</span></div>
+
 </section>
 
 <!-- SLIDE 7: PRICE OF BEING A STADIUM BOROUGH -->
@@ -625,7 +626,7 @@
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>BS620 PART 1 · 410483</span><span>07 / 08</span></div>
+
 </section>
 
 <!-- SLIDE 8: REFLECTION + RECS -->
@@ -652,7 +653,7 @@
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>BS620 PART 1 · 410483</span><span>08 / 08</span></div>
+
 </section>
 
 </div>
