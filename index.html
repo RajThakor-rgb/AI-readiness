@@ -36,16 +36,26 @@
     padding: 32px 0;
   }
 
+  /* Each slide is wrapped in a .slide-frame. The slide is rendered at a
+     fixed 1100px design width and scaled down to fit narrower viewports,
+     so the pixel-based layout never overflows or gets clipped. */
+  .slide-frame {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 32px;
+  }
+
   .slide {
     background: var(--paper);
-    width: 100%;
+    width: 1100px;
     aspect-ratio: 16 / 10;
-    margin: 0 auto 32px;
+    margin: 0;
     padding: 48px 56px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4);
     page-break-after: always;
+    transform-origin: top left;
   }
 
   .slide-meta {
@@ -163,7 +173,8 @@
   .body strong { color: var(--ink); font-weight: 600; }
   .body .cite {
     color: var(--ink-3);
-    font-size: 11px;
+    font-size: inherit;
+    font-family: inherit;
   }
 
   /* SLIDE 2 LAYOUT */
@@ -427,13 +438,15 @@
   @media print {
     body { background: white; }
     .deck { padding: 0; max-width: 100%; }
+    .slide-frame { height: auto !important; max-width: none; margin: 0; }
     .slide {
       margin: 0;
       box-shadow: none;
       aspect-ratio: auto;
-      width: 100%;
+      width: 100% !important;
       height: 100vh;
       page-break-after: always;
+      transform: none !important;
     }
   }
 </style>
@@ -656,5 +669,44 @@
 </section>
 
 </div>
+<script>
+  /* Scale each slide to fit its container so the fixed 1100px design
+     never overflows or gets clipped on narrower screens. */
+  (function () {
+    var BASE = 1100;
+
+    function wrap() {
+      var slides = document.querySelectorAll('.slide');
+      for (var i = 0; i < slides.length; i++) {
+        var s = slides[i];
+        if (s.parentElement && s.parentElement.classList.contains('slide-frame')) continue;
+        var frame = document.createElement('div');
+        frame.className = 'slide-frame';
+        s.parentNode.insertBefore(frame, s);
+        frame.appendChild(s);
+      }
+    }
+
+    function fit() {
+      var frames = document.querySelectorAll('.slide-frame');
+      for (var i = 0; i < frames.length; i++) {
+        var f = frames[i];
+        var s = f.querySelector('.slide');
+        if (!s) continue;
+        var scale = Math.min(1, f.clientWidth / BASE);
+        s.style.transform = scale < 1 ? 'scale(' + scale + ')' : 'none';
+        f.style.height = (s.offsetHeight * scale) + 'px';
+      }
+    }
+
+    wrap();
+    fit();
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(fit);
+    }
+  })();
+</script>
 </body>
 </html>
